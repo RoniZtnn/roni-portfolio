@@ -153,7 +153,7 @@ export default function Home() {
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a href="#projects" className="rounded-2xl bg-cyan-400 px-6 py-3 font-semibold text-black transition hover:scale-105">View Projects</a>
-            <a href="/Roni Zeitouni _CV.pdf" target="_blank" className="rounded-2xl border border-cyan-400 px-6 py-3 transition hover:bg-cyan-400 hover:text-black">View CV</a>
+            <a href="/Roni Zeitouni _ CV" target="_blank" className="rounded-2xl border border-cyan-400 px-6 py-3 transition hover:bg-cyan-400 hover:text-black">View CV</a>
           </div>
         </motion.div>
       </section>
