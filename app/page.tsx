@@ -136,6 +136,7 @@ export default function Home() {
           <h1 className="font-bold text-cyan-400">RZ</h1>
           <div className="flex gap-6 text-sm text-gray-300">
             <a href="#about" className="hover:text-cyan-400">About</a>
+            <a href="#experience" className="hover:text-cyan-400">Experience</a>
             <a href="#projects" className="hover:text-cyan-400">Projects</a>
             <a href="#contact" className="hover:text-cyan-400">Contact</a>
           <a href="/mini-game" className="hover:text-cyan-400">Mini Game</a>
@@ -253,6 +254,47 @@ export default function Home() {
           })}
         </div>
       </section>
+      <section id="experience" className="mx-auto max-w-6xl px-6 py-24">
+  <h2 className="text-4xl font-bold text-cyan-400">Experience Timeline</h2>
+
+  <div className="mt-12 space-y-8 border-l border-cyan-400/30 pl-8">
+    {[
+      {
+        year: "2026",
+        role: "SOC Analyst Intern",
+        company: "Midis Group / i4 Solutions",
+        desc: "Worked with Microsoft Sentinel, Azure Log Analytics, KQL, security alerts, log monitoring, incident investigation, and SOC use cases.",
+      },
+      {
+        year: "2025",
+        role: "IT Support Intern",
+        company: "Cumberland",
+        desc: "Supported networking, routers, switches, user connectivity, cameras, printers, PCs, and general IT troubleshooting.",
+      },
+      {
+        year: "2023 - 2025",
+        role: "ISP / Networking Experience",
+        company: "Independent Work",
+        desc: "Managed internet connectivity, MikroTik configuration, subnetting, troubleshooting, wireless infrastructure, and customer support.",
+      },
+    ].map((item) => (
+      <motion.div
+        key={item.role}
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        className="relative rounded-3xl border border-cyan-400/30 bg-white/5 p-8 backdrop-blur"
+      >
+        <div className="absolute -left-12 top-8 h-4 w-4 rounded-full bg-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.9)]" />
+
+        <p className="text-sm font-semibold text-cyan-400">{item.year}</p>
+        <h3 className="mt-2 text-2xl font-bold">{item.role}</h3>
+        <p className="mt-1 text-cyan-300">{item.company}</p>
+        <p className="mt-4 leading-7 text-gray-400">{item.desc}</p>
+      </motion.div>
+    ))}
+  </div>
+</section>
 
       <section id="contact" className="mx-auto max-w-6xl px-6 py-24 text-center">
         <h2 className="text-4xl font-bold text-cyan-400">Contact</h2>
