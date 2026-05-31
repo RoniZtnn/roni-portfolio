@@ -354,7 +354,15 @@ function City({ setNearby }: { setNearby: (name: string | null) => void }) {
 
 export default function MiniGamePage() {
   const [nearby, setNearby] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setLoading(false);
+  }, 1500);
+
+  return () => clearTimeout(timer);
+}, []);
   return (
     <main className="relative h-screen w-screen overflow-hidden bg-black text-white">
       <div className="absolute left-6 top-6 z-10 rounded-2xl border border-cyan-400/40 bg-black/70 p-4 backdrop-blur">
@@ -416,7 +424,16 @@ export default function MiniGamePage() {
   ))}
 </div>
 
-
+{loading && (
+  <div className="absolute inset-0 z-50 flex items-center justify-center bg-black">
+    <div className="flex flex-col items-center gap-4">
+      <div className="h-16 w-16 animate-spin rounded-full border-4 border-cyan-400/20 border-t-cyan-400" />
+      <p className="text-cyan-400 font-semibold">
+        Loading Mini Game...
+      </p>
+    </div>
+  </div>
+)}
       <Canvas camera={{ position: [9, 9, 9], fov: 55 }}>
         <City setNearby={setNearby} />
       </Canvas>
