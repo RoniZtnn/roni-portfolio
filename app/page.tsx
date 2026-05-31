@@ -138,6 +138,7 @@ export default function Home() {
             <a href="#about" className="hover:text-cyan-400">About</a>
             <a href="#projects" className="hover:text-cyan-400">Projects</a>
             <a href="#contact" className="hover:text-cyan-400">Contact</a>
+          <a href="/mini-game" className="hover:text-cyan-400">Mini Game</a>
           </div>
         </div>
       </nav>
